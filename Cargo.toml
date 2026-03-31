@@ -1,5 +1,5 @@
 [package]
-name = "shoes"
+name = "shoes-lib"
 version = "0.2.8"
 edition = "2024"
 license = "MIT"
@@ -17,9 +17,6 @@ name = "shoes"
 # staticlib = C static library (.a) - required for iOS
 crate-type = ["rlib", "cdylib", "staticlib"]
 
-[[bin]]
-name = "shoes"
-path = "src/main.rs"
 
 [features]
 default = []

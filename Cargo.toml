@@ -23,51 +23,51 @@ default = []
 ffi = []  # Enable FFI module for non-Android builds
 
 [dependencies]
-async-trait = "*"
-aws-lc-rs = { version = "*", default-features = false }
-base64 = "*"
-blake3 = "*"
-bytes = "*"
-chrono = "*"
-dashmap = "*"
-digest = "*"
-etherparse = "*"
-futures = "*"
-h2 = "*"
-h3 = "*"
-h3-quinn = "*"
+async-trait = "0.1"
+aws-lc-rs = { version = "1.15", default-features = false }
+base64 = "0.22"
+blake3 = "1.8"
+bytes = "1.11"
+chrono = "0.4"
+dashmap = "6.1"
+digest = "0.10"
+etherparse = "0.19"
+futures = "0.3"
+h2 = "0.4"
+h3 = "0.0.8"
+h3-quinn = "0.0.10"
 # Git version required for H3 disable_grease option (needed for Cloudflare).
 # Also pinned past older resolver active-request cleanup behavior.
 # See: https://github.com/hickory-dns/hickory-dns/pull/2085
 hickory-resolver = { git = "https://github.com/hickory-dns/hickory-dns", rev = "a1f77f52409a5225120988e2d3518be446328f6c", default-features = false, features = ["tokio", "tls-aws-lc-rs", "https-aws-lc-rs", "h3-aws-lc-rs"] }
-http = "*"
-http-body-util = "*"
-hyper = { version = "*", features = ["server", "http1", "http2"] }
-hyper-util = { version = "*", features = ["tokio", "server"] }
-indexmap = "*"
-libc = "*"
-log = { version = "*", features = ["std", "release_max_level_info"] }
-lru = "*"
-md-5 = "*"
-memchr = "*"
-mime_guess = "*"
-notify = "*"
-parking_lot = "*"
-percent-encoding = "*"
-quinn = { version = "*", default-features = false, features = ["log", "platform-verifier", "runtime-tokio", "rustls-aws-lc-rs"] }
-rand = "*"
-rand_core = "*"
-rcgen = { version = "*", default-features = false, features = ["aws_lc_rs", "pem"] }
-rust-argon2 = "*"
-rustc-hash = "*"
-rustls = "*"
-serde = { version = "*", features = ["derive", "std"] }
-serde_yaml = "*"
-sha3 = "*"
-smoltcp = { version = "*", default-features = false, features = ["std", "log", "medium-ip", "proto-ipv4", "proto-ipv6", "socket-icmp", "socket-udp", "socket-tcp", "socket-tcp-cubic", "phy-tuntap_interface", "assembler-max-segment-count-32"] }
-socket2 = "*"
-subtle = "*"
-tokio = { version = "*", features = [
+http = "1.4"
+http-body-util = "0.1"
+hyper = { version = "1.8", features = ["server", "http1", "http2"] }
+hyper-util = { version = "0.1", features = ["tokio", "server"] }
+indexmap = "2.13"
+libc = "0.2"
+log = { version = "0.4", features = ["std", "release_max_level_info"] }
+lru = "0.16"
+md-5 = "0.10"
+memchr = "2.8"
+mime_guess = "2.0"
+notify = "8.2"
+parking_lot = "0.12"
+percent-encoding = "2.3"
+quinn = { version = "0.11", default-features = false, features = ["log", "platform-verifier", "runtime-tokio", "rustls-aws-lc-rs"] }
+rand = "0.9"
+rand_core = "0.9"
+rcgen = { version = "0.14", default-features = false, features = ["aws_lc_rs", "pem"] }
+rust-argon2 = "3"
+rustc-hash = "2.1"
+rustls = "0.23"
+serde = { version = "1.0", features = ["derive", "std"] }
+serde_yaml = "0.9.34+deprecated"
+sha3 = "0.10"
+smoltcp = { version = "0.12", default-features = false, features = ["std", "log", "medium-ip", "proto-ipv4", "proto-ipv6", "socket-icmp", "socket-udp", "socket-tcp", "socket-tcp-cubic", "phy-tuntap_interface", "assembler-max-segment-count-32"] }
+socket2 = "0.6"
+subtle = "2.6"
+tokio = { version = "1", features = [
     "fs",
     "io-util",
     "macros",
@@ -76,18 +76,18 @@ tokio = { version = "*", features = [
     "sync",
     "time",
 ] }
-tokio-util = { version = "*", features = ["time"] }
-tun = { version = "*", features = ["async"] }
-url = "*"
-webpki-roots = { version = "*" }
-x509-parser = { version = "*", default-features = false, features = ["verify-aws"] }
+tokio-util = { version = "0.7", features = ["time"] }
+tun = { version = "0.8", features = ["async"] }
+url = "2.5"
+webpki-roots = { version = "1.0" }
+x509-parser = { version = "0.18", default-features = false, features = ["verify-aws"] }
 
 [dev-dependencies]
-rcgen = { version = "*", default-features = false, features = ["aws_lc_rs", "pem"] }
-rustls-pemfile = "*"
-serde_json = "*"
-tempfile = "*"
-tokio-rustls = "*"
+rcgen = { version = "0.14", default-features = false, features = ["aws_lc_rs", "pem"] }
+rustls-pemfile = "2.2"
+serde_json = "1.0"
+tempfile = "3.25"
+tokio-rustls = "0.26"
 
 # jemalloc for better memory performance (not supported on Windows MSVC or iOS)
 [target.'cfg(not(any(target_env = "msvc", target_os = "ios")))'.dependencies]
